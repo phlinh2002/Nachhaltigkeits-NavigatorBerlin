@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WAD Project</title>
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="fonts/Roboto-Black" rel="stylesheet">
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/init.js"></script>
+    <script src="./scripts/logout.js"></script>
+    <script src="./scripts/locations.js"></script>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIIoEK5uts1eML7hmNT91h2LDL0OcSq8&callback=showLocationsOnMap"
+            async defer></script>
+
+</head>
+
+<body>
+<div id="main_wrapper" class="site_wrappers">
+    <div id="header_lime"></div>
+    <div id="header">
+        <img id="header_img" src="img/logo.jpg">
+        <p class="headline_header"><b>Nachhaltigkeits-Navigator Berlin</b></p>
+    </div>
+    <div id="login_screen_wrapper" class="site_wrappers">
+        <div class="login_div">
+            <p id="login-screen-title" class="headline_site">Bitte anmelden</p>
+            <form class="form" >
+                <input id="login_input_username" class="form_field" placeholder="Name" required>
+                <input id="login_input_password" type="password" class="form_field" placeholder="Passwort" required>
+                <button id="login_btn_register" class="main-btn" onclick="login()" type="submit">Einloggen</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="wrapper_map_screen" class="form_div" >
+        <div id="sidebar">
+            <div id="wrapper_map_screen_nav">
+
+            </div>
+            <div id="nav_btns">
+                <p id="welcome_message">Willkommen, Nill</p>
+                <button id="map_screen_map_panel_btn_add" onclick="showAddScreen()"class="btn_green">Hinzuf&uumlgen</button>
+                <button id="map_screen_map_panel_btn_logout" onclick="logout()" class="main-btn">Ausloggen</button>
+            </div>
+        </div>
+        <div id="wrapper_map_screen_map">
+            <div
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIIoEK5uts1eML7hmNT91h2LDL0OcSq8&callback=showLocationsOnMap"
+                    id="map_screen" allowfullscreen="true" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></div>
+        </div>
+    </div>
+
+    <div id="add_screen_wrapper" class="site_wrappers">
+        <div class="form_div">
+            <p class="headline_site">Standort hinzuf&uuml;gen</p>
+            <form id="addform"class="form" onsubmit="addLocationDB(event)">
+                <input id="add_screen_input_title" class="form_field" placeholder="Titel*" required>
+                <input id="add_screen_input_description" class="form_field" placeholder="Beschreibung">
+                <input id="add_screen_input_street" class="form_field" placeholder="Stra&szlig;e*" required>
+                <input id="add_screen_input_zip" class="form_field" placeholder="PLZ*" required>
+                <input id="add_screen_input_town" class="form_field" placeholder="Stadt*" required>
+                <input id="add_screen_input_state" class="form_field" placeholder="Bundesland*" required>
+                <input id="add_screen_input_latitude" class="form_field" placeholder="Breitengrad">
+                <input id="add_screen_input_longitude" class="form_field" placeholder="L&auml;gengrad">
+                <p class="hint">* Pflichtfelder </p>
+                <button id="add_screen_input_btn_add" class="btn_green">Hinzuf&uuml;gen</button>
+            </form>
+            <button id="add_screen_input_btn_logout" onclick="logout()" class="main-btn">Ausloggen</button>
+
+
+        </div>
+    </div>
+
+    <div id="update_screen_wrapper" class="form_div">
+        <div class="form_div">
+            <p class="headline_site">Standort bearbeiten</p>
+            <form class="form">
+                <input id="update_screen_input_title" class="form_field" placeholder="Titel*" required>
+                <input id="update_screen_input_description" class="form_field" placeholder="Beschreibung">
+                <input id="update_screen_input_street" class="form_field" placeholder="Stra&szlig;e*" required>
+                <input id="update_screen_input_zip" class="form_field" placeholder="PLZ*" required>
+                <input id="update_screen_input_town" class="form_field" placeholder="Stadt*" required>
+                <input id="update_screen_input_state" class="form_field" placeholder="Bundesland">
+                <input id="update_screen_input_latitude" class="form_field" placeholder="Breitengrad">
+                <input id="update_screen_input_longitude" class="form_field" placeholder="L&auml;gengrad">
+                <p class="hint">* Pflichtfelder </p>
+                <button id="update_screen_input_btn_update" class="main-btn btn">Aktualisieren</button>
+                <button id="update_screen_input_btn_delete" class="red-btn btn">L&ouml;schen</button>
+                <button id="update_screen_input_btn_cancel" class="main-btn btn">Abbrechen</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<div id="footer">
+    <p id="copyright">&copy; HTW-Berlin, Wilhelminenhofstr. 36, 12459 Berlin</p>
+    <a class="regulations" href="https://copypaste24.de/datenschutz/">Datenschutzbestimmungen</a>
+    <a class="regulations" href="https://www.htw-berlin.de/impressum/">Impressum</a>
+</div>
+</body>
+
+</html>
