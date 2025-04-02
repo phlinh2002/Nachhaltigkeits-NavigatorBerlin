@@ -1,9 +1,9 @@
 const { MongoClient } = require("mongodb");
 const { ObjectId } = require("mongodb");
 
-function MongoCRUDs (db_name, uri) {
-    this.db_name = db_name;
-    this.uri = uri;
+function MongoCRUDs(db_name, uri) {
+  this.db_name = db_name;
+  this.uri = uri;
 }
 function MongoCRUDs() {
   const db_user = "webdev_admin";
@@ -16,7 +16,7 @@ function MongoCRUDs() {
   this.db_name = db_name;
 }
 
-MongoCRUDs.prototype.findOneUser = async function(username, password) {
+MongoCRUDs.prototype.findOneUser = async function (username, password) {
   const client = new MongoClient(this.uri);
   try {
     await client.connect();
@@ -33,7 +33,7 @@ MongoCRUDs.prototype.findOneUser = async function(username, password) {
   }
 };
 
-MongoCRUDs.prototype.createUser = async function(userData) {
+MongoCRUDs.prototype.createUser = async function (userData) {
   const client = new MongoClient(this.uri);
   try {
     await client.connect();
@@ -49,7 +49,7 @@ MongoCRUDs.prototype.createUser = async function(userData) {
   }
 };
 
-MongoCRUDs.prototype.getAllUsers = async function() {
+MongoCRUDs.prototype.getAllUsers = async function () {
   const client = new MongoClient(this.uri);
   try {
     await client.connect();
@@ -63,7 +63,7 @@ MongoCRUDs.prototype.getAllUsers = async function() {
 };
 
 
-MongoCRUDs.prototype.createLocation = async function(locationData) {
+MongoCRUDs.prototype.createLocation = async function (locationData) {
   const client = new MongoClient(this.uri);
   try {
     const database = client.db(this.db_name);
@@ -78,7 +78,7 @@ MongoCRUDs.prototype.createLocation = async function(locationData) {
   }
 };
 
-MongoCRUDs.prototype.getLocation = async function(locationId) {
+MongoCRUDs.prototype.getLocation = async function (locationId) {
   const client = new MongoClient(this.uri);
   try {
     await client.connect();
@@ -91,7 +91,7 @@ MongoCRUDs.prototype.getLocation = async function(locationId) {
   }
 };
 
-MongoCRUDs.prototype.getAllLocations = async function() {
+MongoCRUDs.prototype.getAllLocations = async function () {
   const client = new MongoClient(this.uri);
   try {
     const database = client.db(this.db_name);
@@ -103,7 +103,7 @@ MongoCRUDs.prototype.getAllLocations = async function() {
   }
 };
 
-MongoCRUDs.prototype.updateLocation = async function(locationId, updateData) {
+MongoCRUDs.prototype.updateLocation = async function (locationId, updateData) {
   const client = new MongoClient(this.uri);
   try {
     const database = client.db(this.db_name);
@@ -116,7 +116,7 @@ MongoCRUDs.prototype.updateLocation = async function(locationId, updateData) {
   }
 };
 
-MongoCRUDs.prototype.deleteLocation = async function(locationId) {
+MongoCRUDs.prototype.deleteLocation = async function (locationId) {
   const client = new MongoClient(this.uri);
   try {
     const database = client.db(this.db_name);
@@ -128,7 +128,7 @@ MongoCRUDs.prototype.deleteLocation = async function(locationId) {
   }
 };
 
-MongoCRUDs.prototype.deleteAllUsers = async function() {
+MongoCRUDs.prototype.deleteAllUsers = async function () {
   const client = new MongoClient(this.uri);
   try {
     await client.connect();
@@ -142,7 +142,7 @@ MongoCRUDs.prototype.deleteAllUsers = async function() {
   }
 };
 
-MongoCRUDs.prototype.deleteUserById = async function(userId) {
+MongoCRUDs.prototype.deleteUserById = async function (userId) {
   const client = new MongoClient(this.uri);
   try {
     await client.connect();
